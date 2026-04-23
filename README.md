@@ -78,7 +78,8 @@ I have uploaded corrupt files (e.g., invalid_logic.json) and verified that the p
 I have verified the receipt of SNS Email Alerts containing specific error messages for every failed processing attempt.
 
 ## Architecture Diagram
-(Add architecture diagram here)
+<img width="1169" height="827" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/4601f8cd-63c4-49f5-91e5-1beb10d38cd0" />
+
 
 ---
 
