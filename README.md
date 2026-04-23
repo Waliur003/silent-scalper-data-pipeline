@@ -1,4 +1,4 @@
-# Cloud Engineering Project 04: The Silent Scalper (Automated Data Pipeline)
+# Cloud Engineering Project 05: The Silent Scalper (Automated Data Pipeline)
 
 ## Overview
 I have architected and deployed a resilient, event-driven data processing pipeline on AWS. This project demonstrates the implementation of a self-healing architecture where data is ingested via cloud storage, processed through serverless compute, and automatically routed based on the success or failure of the operation—ensuring zero data loss and optimal cost efficiency.
