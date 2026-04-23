@@ -1,4 +1,4 @@
-# Cloud Engineering Project 04: The Silent Scalper  
+# Cloud Engineering Project 05: The Silent Scalper  
 ## Automated Event-Driven Data Pipeline
 
 ## Overview
