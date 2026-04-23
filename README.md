@@ -32,39 +32,39 @@ I have utilized Amazon DynamoDB to maintain a permanent, searchable record of al
 
 ### 1. Engineered a Serverless Metadata Repository
 
-I have created an Amazon DynamoDB table named ProcessedData to track successful pipeline executions.
+1.I have created an Amazon DynamoDB table named ProcessedData to track successful pipeline executions.
 
-I have established FileID as the Partition Key to ensure unique indexing of every processed record.
+2.I have established FileID as the Partition Key to ensure unique indexing of every processed record.
 
-I have configured the table for On-Demand Capacity, ensuring the database scales automatically with processing volume.
+3.I have configured the table for On-Demand Capacity, ensuring the database scales automatically with processing volume.
 
 ### 2. Developed the Orchestration Logic
 
-I have written a Python-based AWS Lambda function to serve as the pipeline’s brain.
+1.I have written a Python-based AWS Lambda function to serve as the pipeline’s brain.
 
-I have implemented event-parsing logic to extract bucket metadata and handle special characters in file names using urllib.parse.
+2.I have implemented event-parsing logic to extract bucket metadata and handle special characters in file names using urllib.parse.
 
-I have integrated a validation layer that checks for mandatory schema fields (e.g., id) before committing data to the database.
+3.I have integrated a validation layer that checks for mandatory schema fields (e.g., id) before committing data to the database.
 
 ### 3. Implemented Automated Failure Recovery
 
-I have engineered an except block within the Lambda logic to handle both syntax errors and business logic failures.
+1.I have engineered an except block within the Lambda logic to handle both syntax errors and business logic failures.
 
-I have utilized the S3 Copy and Delete pattern to "move" invalid files into a Quarantine Bucket, ensuring the source bucket remains clean and ready for new data.
+2.I have utilized the S3 Copy and Delete pattern to "move" invalid files into a Quarantine Bucket, ensuring the source bucket remains clean and ready for new data.
 
-I have integrated the SNS publish API to send critical failure details and error logs directly to an engineer's inbox.
+3.I have integrated the SNS publish API to send critical failure details and error logs directly to an engineer's inbox.
 
 ### 4. Enforced Hardened Security (IAM)
 
-I have configured a Custom Execution Role to adhere to the Principle of Least Privilege.
+1.I have configured a Custom Execution Role to adhere to the Principle of Least Privilege.
 
-I have implemented a JSON-based Inline Policy that strictly limits access to specific ARNs for the S3 buckets, DynamoDB table, and SNS topic, preventing unauthorized resource manipulation.
+2.I have implemented a JSON-based Inline Policy that strictly limits access to specific ARNs for the S3 buckets, DynamoDB table, and SNS topic, preventing unauthorized resource manipulation.
 
 ### 5. Established the Event-Driven Trigger
 
-I have finalized the automation by establishing an S3 Event Notification on the source bucket.
+1.I have finalized the automation by establishing an S3 Event Notification on the source bucket.
 
-I have linked s3:ObjectCreated:* events to the Lambda function, creating a fully autonomous workflow that requires no manual start command.
+2.I have linked s3:ObjectCreated:* events to the Lambda function, creating a fully autonomous workflow that requires no manual start command.
 
 ## Verification and Results
 
