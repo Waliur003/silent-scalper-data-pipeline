@@ -1,0 +1,4 @@
+{
+  "id": "ERR-404",
+  "message": "This file is broken",
+  "reason": "Missing closing brace"

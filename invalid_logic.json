@@ -1,0 +1,4 @@
+{
+  "description": "I am valid JSON, but I have no ID field",
+  "test_type": "Business Logic Failure"
+}
